@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Resto</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="https://kit.fontawesome.com/13f6806ce8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header><!-- Inicio Header -->
+        <nav class="navbar container">
+            <a href="/index.html">
+                <picture class="navbar__logo">
+                    <img src="/img/logo1.png" alt="Logo">
+                    <h2>FoodTrack</h2>
+                </picture>
+            </a>
+            
+            <input type="checkbox" id="menu" class="menu-checkbox">
+            <label for="menu" class="menu-icon">
+                <img src="/img/menu.png" class="menu-icono" alt="">
+            </label>
+
+            <ul class="navbar__menu">
+                <li class="navbar__item with-submenu">
+                    <a class="navbar__link with-icon" href="/index.html">INICIO</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="/menu.html">MENU</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="/contacto.html">CONTACTO</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__cart" href="/carrito.html">
+                        <img src="/img/cart-icon.svg" alt="Icono de carrito">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header> <!-- Fin Header-->
+    <section class="hero">
+        <article class="hero__content container">
+            <h3 class="hero__title" >Manyar</h3>
+            <p class="hero__text" >
+                <br> En lunfardo "MANYAR" es comer, viene del italiano Magiare.<br>
+                Tambien es entender, conocer algo a fondo, que viene del italiano
+                Mangiare La Foglia<br>
+                ¿MANYASTE?
+            </p>
+            <a class="anima" href="/menu.html">¡PEDIR AHORA!</a>
+        </article>
+    </section>
+    <main class="main-container">
+        <div id="main" class="container">
+
+        </div> 
+ 
+    </main>
+
+    <footer class="footerContainer">
+       <section>
+        <div class="links">
+            <ul>
+                <li>
+                    <a href="/index.html">INICIO</a>
+                </li>
+                <li>
+                    <a href="/menu.html">MENU</a>
+                </li> 
+                <li>
+                    <a href="/contacto.html">CONTACTO</a>
+                </li>
+                <li>
+                    <a href="/carrito.html">CARRITO</a>
+                </li>
+            </ul>
+        </div>
+       </section>
+       <div class="social-section">
+            <a href="#" class="instagram-link">
+                <i class="fa-brands fa-instagram instagram-icon"></i>
+            </a>
+            <a href="#" class="twitter-link">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#" class="facebook-link">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+        </div>
+            <p align="center">
+                All rights reserved 2024 - FoodTrack &copy; <br>
+                <b>Tel:</b> 555 - 4444 | <a href="mailto:correo@hotmail.com">Correo Electronico</a>
+            </p>
+    </footer>
+    <script type="module" src="./js/fetchMercaderias.js"></script>
+</body>
+
+</html>
