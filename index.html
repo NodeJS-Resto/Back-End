@@ -17,26 +17,9 @@
                     <h2>FoodTrack</h2>
                 </picture>
             </a>
-            
-            <input type="checkbox" id="menu" class="menu-checkbox">
-            <label for="menu" class="menu-icon">
-                <img src="/img/menu.png" class="menu-icono" alt="">
-            </label>
-
             <ul class="navbar__menu">
-                <li class="navbar__item with-submenu">
-                    <a class="navbar__link with-icon" href="/index.html">INICIO</a>
-                </li>
                 <li class="navbar__item">
-                    <a class="navbar__link" href="/menu.html">MENU</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="/contacto.html">CONTACTO</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__cart" href="/carrito.html">
-                        <img src="/img/cart-icon.svg" alt="Icono de carrito">
-                    </a>
+                    <button id="btnAbrirModal" class="navbar__link">AGREGAR MERCADERÍA</button>
                 </li>
             </ul>
         </nav>
@@ -50,35 +33,32 @@
                 Mangiare La Foglia<br>
                 ¿MANYASTE?
             </p>
-            <a class="anima" href="/menu.html">¡PEDIR AHORA!</a>
+            <a class="anima" href="/index.html">¡PEDIR AHORA!</a>
         </article>
     </section>
-    <main class="main-container">
-        <div id="main" class="container">
-
-        </div> 
- 
-    </main>
-
-    <footer class="footerContainer">
-       <section>
-        <div class="links">
-            <ul>
-                <li>
-                    <a href="/index.html">INICIO</a>
-                </li>
-                <li>
-                    <a href="/menu.html">MENU</a>
-                </li> 
-                <li>
-                    <a href="/contacto.html">CONTACTO</a>
-                </li>
-                <li>
-                    <a href="/carrito.html">CARRITO</a>
-                </li>
-            </ul>
+    <main>
+        <div class="contenedor container">
+            <div id="main" class="container">
+                <!-- Aca se muestran las mercaderías -->
+            </div> 
         </div>
-       </section>
+    </main>
+    
+    <div id="modal" class="modal"> <!-- Modal -->
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <form id="mercaderia-form">
+                <h3>Agregar Mercaderia</h3>
+                <input type="text" id="mercaderia-nombre" placeholder="Nombre" required>
+                <input type="number" id="mercaderia-precio" placeholder="Precio" required>
+                <input type="number" id="mercaderia-tipo" placeholder="Tipo de Plato" required>
+                <input type="url" id="mercaderia-imagen" placeholder="Imagen" required>
+                <button type="submit" class="btn-agregar">Agregar</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footerContainer"> 
        <div class="social-section">
             <a href="#" class="instagram-link">
                 <i class="fa-brands fa-instagram instagram-icon"></i>
