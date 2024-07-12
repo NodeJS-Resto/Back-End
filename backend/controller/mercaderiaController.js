@@ -47,6 +47,11 @@ const ActualizarMercaderia = (req, res) => {
     const {nombre, precio, imagen, tipoMercaderia_idTipoMercaderia} = req.body;
     const sql = `UPDATE mercaderia SET nombre = ?, precio = ?, imagen = ?, tipoMercaderia_idTipoMercaderia = ? WHERE idMercaderia = ?`;
 
+    if (!nombre || !precio || !imagen || !tipoMercaderia_idTipoMercaderia) {
+        res.status(400).json({ mensaje: 'Por favor, complete todos los campos.' });
+        return;
+    }
+    
     db.query(sql, [nombre, precio, imagen, tipoMercaderia_idTipoMercaderia, id], (error, result) => {
         if (error) {
             throw error;

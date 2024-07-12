@@ -64,20 +64,36 @@ function modifyMercaderia(id) {
     fetch(`${apiUrl}/mercaderias/${id}`)
         .then(response => response.json())
         .then(mercaderia => {
-            const NuevoNombre = prompt('Ingrese el nuevo nombre:', mercaderia.Nombre) || mercaderia.Nombre;
-            const NuevoPrecio = prompt('Ingrese el nuevo precio:', mercaderia.Precio) || mercaderia.Precio;
-            const NuevaImagen = prompt('Ingrese la nueva imagen:', mercaderia.Imagen) || mercaderia.Imagen;
-            const NuevoTipoMercaderia_idTipoMercaderia = prompt('Ingrese el nuevo tipo de mercadería:', mercaderia.TipoMercaderia_idTipoMercaderia) || mercaderia.TipoMercaderia_idTipoMercaderia;
+            const nuevoNombre = prompt('Ingrese el nuevo nombre:', mercaderia.Nombre) || mercaderia.Nombre;
+            const nuevoPrecio = prompt('Ingrese el nuevo precio:', mercaderia.Precio) || mercaderia.Precio;
+            const nuevaImagen = prompt('Ingrese la nueva imagen:', mercaderia.Imagen) || mercaderia.Imagen;
+            const nuevoTipoMercaderia_idTipoMercaderia = prompt('Ingrese el nuevo tipo de mercadería:', mercaderia.TipoMercaderia_idTipoMercaderia) || mercaderia.TipoMercaderia_idTipoMercaderia;
+
+            if (!nuevoNombre || !nuevoPrecio || !nuevaImagen || !nuevoTipoMercaderia_idTipoMercaderia) {
+                alert('Por favor, complete todos los campos.');
+                return;
+            }
+
+            const updatedData = {
+                nombre: nuevoNombre,
+                precio: nuevoPrecio,
+                imagen: nuevaImagen,
+                tipoMercaderia_idTipoMercaderia: nuevoTipoMercaderia_idTipoMercaderia
+            };
 
             fetch(`${apiUrl}/mercaderias/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ Nombre: NuevoNombre, Precio: NuevoPrecio, Imagen: NuevaImagen, TipoMercaderia_idTipoMercaderia: NuevoTipoMercaderia_idTipoMercaderia })
+                body: JSON.stringify(updatedData)
             })
             .then(response => response.json())
-            .then(() => fetchMercaderias());
+            .then(() => {
+                document.getElementById('main').innerHTML = '';
+                fetchMercaderias();
+            })
+            .catch(error => console.error('Error:', error));
         })
         .catch(error => console.error('Error:', error));
 }
